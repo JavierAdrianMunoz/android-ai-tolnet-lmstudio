@@ -1,0 +1,29 @@
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imgStream"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter"/>
+
+    <Button
+        android:id="@+id/btnStream"
+        android:text="Iniciar"
+        android:layout_gravity="bottom|center"
+        android:layout_margin="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/txtOCR"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Texto detectado..."
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:background="#80000000"
+        android:padding="8dp"
+        android:layout_gravity="top"/>
+</FrameLayout>
