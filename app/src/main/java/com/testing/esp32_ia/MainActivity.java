@@ -24,11 +24,6 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
 
-        // crear notificacion de prueba
-        notification = new Notification(getApplicationContext());
-        notification.createNotificationChannel();
-        notification.sendNotification();
-
         setContentView(R.layout.activity_main);
 
         tabLayout = findViewById(R.id.tabLayout);

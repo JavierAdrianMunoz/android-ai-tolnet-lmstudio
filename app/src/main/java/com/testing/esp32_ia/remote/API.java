@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class API {
+    // crear notificacion de prueba
+
     final String TAG ="API";
     private final OkHttpClient client = new OkHttpClient.Builder()
             .connectTimeout(30, TimeUnit.SECONDS)
@@ -22,6 +24,7 @@ public class API {
             .build();
 
     public void sendToApi(Context context,String pregunta) {
+        Notification notification = new Notification(context);
 
         try {
             String finalMessage = "Limpia y solo obten pregunta e incisos, posteriormente Responde solo la letra de la respuesta correcta a:".concat(pregunta);
@@ -92,7 +95,8 @@ public class API {
                         // mostrar en UI
                         // guardar
                         // TTS, etc.
-
+                        notification.createNotificationChannel();
+                        notification.sendNotification(finalText);
                     } catch (Exception e) {
                         Log.e(TAG, "Parse error: " + e.getMessage());
                         vibrarError(context);

@@ -48,7 +48,7 @@ public class Notification {
     }
 
     @SuppressLint("MissingPermission")
-    public void sendNotification() {
+    public void sendNotification(String respuesta) {
         // Intent that triggers when the notification is tapped
         Intent intent = new Intent(context, AfterNotification.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -63,8 +63,8 @@ public class Notification {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, channelId)
                 .setSmallIcon(R.drawable.ic_launcher_foreground) // Notification icon
                 .setContent(contentView) // Custom notification content
-                .setContentTitle("Pregunta 1") // Title displayed in the notification
-                .setContentText("Respuesta: a") // Text displayed in the notification
+                .setContentTitle("Pregunta") // Title displayed in the notification
+                .setContentText("Respuesta: "+respuesta) // Text displayed in the notification
                 .setContentIntent(pendingIntent) // Pending intent triggered when tapped
                 .setAutoCancel(true) // Dismiss notification when tapped
                 .setPriority(NotificationCompat.PRIORITY_HIGH); // Notification priority for better visibility

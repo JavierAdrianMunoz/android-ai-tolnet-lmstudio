@@ -73,9 +73,7 @@ public class CaptureFragment extends Fragment {
                     requireActivity().runOnUiThread(() ->
                             imgCapture.setImageBitmap(bitmap)
                     );
-
-
-                     processOCR(bitmap);
+                    processOCR(bitmap);
                 }
 
             }catch(Exception e){
