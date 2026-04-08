@@ -9,6 +9,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.tabs.TabLayoutMediator;
+import com.testing.esp32_ia.remote.Notification;
 import com.testing.esp32_ia.remote.RED;
 
 public class MainActivity extends AppCompatActivity {
@@ -16,10 +17,17 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager2 viewPager;
 
+    Notification notification;
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
 
         super.onCreate(savedInstanceState);
+
+        // crear notificacion de prueba
+        notification = new Notification(getApplicationContext());
+        notification.createNotificationChannel();
+        notification.sendNotification();
 
         setContentView(R.layout.activity_main);
 
